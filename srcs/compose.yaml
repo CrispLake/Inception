@@ -4,13 +4,17 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/Home/emajuri/data/wordpress
+      device: '/home/emajuri/data/wordpress'
   mariadb:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/Home/emajuri/data/mariadb
+      device: '/home/emajuri/data/mariadb'
+
+networks:
+  inception:
+    driver: bridge
 
 services:
   mariadb:
@@ -20,7 +24,7 @@ services:
     build:
       context: requirements/mariadb
       dockerfile: Dockerfile
-      env_file: .env
+    env_file: .env
     volumes:
       - mariadb:/var/lib/mysql
     restart: unless-stopped
