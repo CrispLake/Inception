@@ -13,6 +13,9 @@ RUN openssl req -x509 -nodes -out /etc/nginx/ssl/inception.crt -keyout /etc/ngin
 
 RUN mkdir -p /var/run/nginx
 
+#static html test
+#COPY tools/index.html /var/www/html
+
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 RUN chmod 644 /etc/nginx/nginx.conf
 

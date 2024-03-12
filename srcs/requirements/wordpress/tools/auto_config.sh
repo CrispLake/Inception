@@ -1,5 +1,7 @@
 #!/bin/sh
 
+if [ ! -d "/var/www/wordpress" ]
+then
 sleep 10
 wp core download --allow-root
 
@@ -23,6 +25,7 @@ wp user create --allow-root \
 	$WP_USER_EMAIL \
 	--user_pass=$WP_USER_PASS
 
+fi
 
 path="/run/php"
 
