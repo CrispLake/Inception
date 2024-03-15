@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -d "/var/www/wordpress" ]
+if [ ! -d "/var/www/wordpress/wp-admin" ]
 then
 sleep 10
 wp core download --allow-root
